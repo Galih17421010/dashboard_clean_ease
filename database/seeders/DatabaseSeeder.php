@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,19 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::transaction(function () {
-            \App\Models\User::create([
-                'name' => 'Administrator',
-                'email' => 'admin@local.test',
-                'password' => Hash::make('password'),
-                'email_verified_at' => Carbon::now()
-            ]);
+        // User::factory(10)->create();
 
-            \App\Models\Role::create([
-                'name' => 'administrator'
-            ]);
-        });
-
-        $this->call(PermissionSeeder::class);
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
     }
 }
