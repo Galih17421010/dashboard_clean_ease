@@ -22,19 +22,6 @@
     {{-- <script src={{Vite::asset("resources/assets/js/main.js")}}></script> --}}
 
     @vite([
-            "resources/assets/js/jquery.min.js",
-            "resources/assets/js/popper.js",
-            "resources/assets/js/bootstrap.js",
-            "resources/assets/js/node-waves.js",
-            "resources/assets/js/perfect-scrollbar.js",
-            "resources/assets/js/hammer.js",
-            "resources/assets/js/i18n.js",
-            "resources/assets/js/typeahead.js",
-            "resources/assets/js/menu.js",
-
-            "resources/assets/js/apexcharts.js",
-            "resources/assets/js/datatables-bootstrap5.js",
-            "resources/assets/js/select2.js",
-            "resources/assets/js/sweetalert2.js",
-            "resources/assets/js/main.js",
+            "resources/assets/js/vendor.min.js",
+            "resources/assets/js/app.min.js",
     ])

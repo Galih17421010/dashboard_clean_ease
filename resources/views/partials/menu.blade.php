@@ -1,248 +1,486 @@
-<!-- Menu -->
-<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-    <div class="app-brand demo">
-      <a href="{{ route('dashboard') }}" class="app-brand-link">
-        <span class="app-brand-logo demo me-1">
-          <span style="color: var(--bs-primary)">
-            <svg width="30" height="24" viewBox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M12.3002 1.25469L56.655 28.6432C59.0349 30.1128 60.4839 32.711 60.4839 35.5089V160.63C60.4839 163.468 58.9941 166.097 56.5603 167.553L12.2055 194.107C8.3836 196.395 3.43136 195.15 1.14435 191.327C0.395485 190.075 0 188.643 0 187.184V8.12039C0 3.66447 3.61061 0.0522461 8.06452 0.0522461C9.56056 0.0522461 11.0271 0.468577 12.3002 1.25469Z"
-                fill="currentColor"
-              />
-              <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M0 65.2656L60.4839 99.9629V133.979L0 65.2656Z" fill="black" />
-              <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M0 65.2656L60.4839 99.0795V119.859L0 65.2656Z" fill="black" />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M237.71 1.22393L193.355 28.5207C190.97 29.9889 189.516 32.5905 189.516 35.3927V160.631C189.516 163.469 191.006 166.098 193.44 167.555L237.794 194.108C241.616 196.396 246.569 195.151 248.856 191.328C249.605 190.076 250 188.644 250 187.185V8.09597C250 3.64006 246.389 0.027832 241.935 0.027832C240.444 0.027832 238.981 0.441882 237.71 1.22393Z"
-                fill="currentColor"
-              />
-              <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M250 65.2656L189.516 99.8897V135.006L250 65.2656Z" fill="black" />
-              <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M250 65.2656L189.516 99.0497V120.886L250 65.2656Z" fill="black" />
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z" fill="currentColor" />
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z" fill="white" fill-opacity="0.15" />
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z" fill="currentColor" />
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z" fill="white" fill-opacity="0.3" />
-            </svg>
-          </span>
-        </span>
-        <span class="app-brand-text demo menu-text fw-semibold ms-2">Portfolio</span>
-      </a>
+<!-- ========== App Menu Start ========== -->
+<div class="main-nav">
+    <!-- Sidebar Logo -->
+    <div class="logo-box">
+         <a href="index.html" class="logo-dark">
+              <img src="assets/images/logo-sm.png" class="logo-sm" alt="logo sm">
+              <img src="assets/images/logo-dark.png" class="logo-lg" alt="logo dark">
+         </a>
 
-      <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
-        <i class="menu-toggle-icon d-xl-block align-middle"></i>
-      </a>
+         <a href="index.html" class="logo-light">
+              <img src="assets/images/logo-sm.png" class="logo-sm" alt="logo sm">
+              <img src="assets/images/logo-light.png" class="logo-lg" alt="logo light">
+         </a>
     </div>
 
-    <div class="menu-inner-shadow"></div>
+    <!-- Menu Toggle Button (sm-hover) -->
+    <button type="button" class="button-sm-hover" aria-label="Show Full Sidebar">
+         <iconify-icon icon="solar:hamburger-menu-broken" class="button-sm-hover-icon"></iconify-icon>
+    </button>
 
-    <ul class="menu-inner py-1">
-      <!-- Dashboards -->
-      <li class="menu-item {{ request()->is('dashboard') ? 'active' : ''}}">
-        <a href="{{ route('dashboard') }}" class="menu-link">
-          <i class="menu-icon tf-icons ri-home-smile-line"></i>
-          <div data-i18n="Dashboard">Dashboard</div>
-        </a>
-      </li>
+    <div class="scrollbar" data-simplebar>
 
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons ri-news-line"></i>
-          <div data-i18n="Blogs">Blogs</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item {{ request()->is('categorietag') ? 'active' : ''}}">
-            <a href="#" class="menu-link">
-              <div data-i18n="Categorie & Tag">Categorie & Tag</div>
-            </a>
-          </li>
+         <ul class="navbar-nav" id="navbar-nav">
 
-          <li class="menu-item {{ request()->is('articles') ? 'active' : ''}}">
-            <a href="#" class="menu-link">
-              <div data-i18n="Articles">Articles</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-item {{ request()->is('projects') ? 'active' : ''}}">
-        <a href="#" class="menu-link">
-          <i class="menu-icon tf-icons ri-list-check-3"></i>
-          <div data-i18n="Projects">Projects</div>
-        </a>
-      </li>
-      <li class="menu-item {{ request()->is('skills') ? 'active' : ''}}">
-        <a href="#" class="menu-link">
-          <i class="menu-icon tf-icons ri-tools-line"></i>
-          <div data-i18n="Skills">Skills</div>
-        </a>
-      </li>
-      <li class="menu-item {{ request()->is('experiences') ? 'active' : ''}}">
-        <a href="#" class="menu-link">
-          <i class="menu-icon tf-icons ri-pages-line"></i>
-          <div data-i18n="Experiences">Experiences</div>
-        </a>
-      </li>
-      <li class="menu-item {{ request()->is('educations') ? 'active' : ''}}">
-        <a href="#" class="menu-link">
-          <i class="menu-icon tf-icons ri-graduation-cap-line"></i>
-          <div data-i18n="Educations">Educations</div>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons ri-user-line"></i>
-          <div data-i18n="Users">Users</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="#" class="menu-link">
-              <div data-i18n="List">List</div>
-            </a>
-          </li>
+              <li class="menu-title">Menu</li>
 
-          <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <div data-i18n="View">View</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="#" class="menu-link">
-                  <div data-i18n="Account">Account</div>
-                </a>
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:widget-5-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Dashboards </span>
+                   </a>
+                   <div class="collapse" id="sidebarDashboards">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="index.html">eCommerce</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="dashboard-analytics.html">Analytics</a>
+                             </li>
+                        </ul>
+                   </div>
               </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons ri-lock-2-line"></i>
-          <div data-i18n="Roles & Permissions">Roles & Permissions</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="app-access-roles.html" class="menu-link">
-              <div data-i18n="Roles">Roles</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="app-access-permission.html" class="menu-link">
-              <div data-i18n="Permission">Permission</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons ri-settings-5-line"></i>
-          <div data-i18n="Settings">Settings</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <div data-i18n="User Profile">User Profile</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="pages-profile-user.html" class="menu-link">
-                  <div data-i18n="Profile">Profile</div>
-                </a>
+
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarLayouts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLayouts">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:window-frame-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Layouts </span>
+                   </a>
+                   <div class="collapse" id="sidebarLayouts">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="layouts-dark-sidenav.html" target="_blank">Dark Sidenav</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="layouts-dark-topnav.html" target="_blank">Dark Topnav</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="layouts-simple-sidenav.html" target="_blank">Simple Sidenav</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="layouts-small-sidenav.html" target="_blank">Small Sidenav</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="layouts-small-hover.html" target="_blank">Small Hover</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="layouts-small-hover-active.html">Small Hover Active</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="layouts-hidden-sidenav.html" target="_blank">Hidden Sidenav</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" target="_blank" href="layouts-dark.html">
+                                       <span class="nav-text">Dark Mode</span>
+                                       <span class="badge badge-soft-danger badge-pill text-end">Hot</span>
+                                  </a>
+                             </li>
+                        </ul>
+                   </div>
               </li>
-              <li class="menu-item">
-                <a href="pages-profile-teams.html" class="menu-link">
-                  <div data-i18n="Teams">Teams</div>
-                </a>
+
+              <li class="nav-item">
+                   <a class="nav-link" href="index-rtl.html">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:planet-2-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> RTL Mode </span>
+                        <span class="badge bg-success badge-pill text-end">New</span>
+                   </a>
               </li>
-              <li class="menu-item">
-                <a href="pages-profile-projects.html" class="menu-link">
-                  <div data-i18n="Projects">Projects</div>
-                </a>
+
+              <li class="menu-title">Custom</li>
+
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:case-round-minimalistic-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Pages </span>
+                   </a>
+                   <div class="collapse" id="sidebarPages">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="pages-starter.html">Welcome</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="pages-calendar.html">Calendar</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="pages-invoice.html">Invoice</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="pages-faqs.html">FAQs</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="pages-comingsoon.html">Coming Soon</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="pages-timeline.html">Timeline</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="pages-pricing.html">Pricing</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="pages-maintenance.html">Maintenance</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="pages-404.html">404 Error</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="pages-404-alt.html">404 Error (alt)</a>
+                             </li>
+                        </ul>
+                   </div>
+              </li> <!-- end Pages Menu -->
+
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarAuthentication" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuthentication">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:shield-user-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Authentication </span>
+                   </a>
+                   <div class="collapse" id="sidebarAuthentication">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="auth-signin.html">Sign In</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="auth-signup.html">Sign Up</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="auth-password.html">Reset Password</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="auth-lock-screen.html">Lock Screen</a>
+                             </li>
+                        </ul>
+                   </div>
               </li>
-              <li class="menu-item">
-                <a href="pages-profile-connections.html" class="menu-link">
-                  <div data-i18n="Connections">Connections</div>
-                </a>
+
+              <li class="nav-item">
+                   <a class="nav-link" href="widgets.html">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:leaf-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text">Widgets</span>
+                        <span class="badge bg-danger badge-pill text-end">Hot</span>
+                   </a>
               </li>
-            </ul>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <div data-i18n="Account Settings">Account Settings</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                  <div data-i18n="Account">Account</div>
-                </a>
+
+              <li class="menu-title">Components</li>
+
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarBaseUI" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarBaseUI">
+                        <span class="nav-icon"><iconify-icon icon="solar:benzene-ring-bold-duotone"></iconify-icon></span>
+                        <span class="nav-text"> Base UI </span>
+                   </a>
+                   <div class="collapse" id="sidebarBaseUI">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-accordion.html">Accordion</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-alerts.html">Alerts</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-avatar.html">Avatar</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-badge.html">Badge</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-breadcrumb.html">Breadcrumb</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-buttons.html">Buttons</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-card.html">Card</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-carousel.html">Carousel</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-collapse.html">Collapse</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-dropdown.html">Dropdown</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-list-group.html">List Group</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-modal.html">Modal</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-tabs.html">Tabs</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-offcanvas.html">Offcanvas</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-pagination.html">Pagination</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-placeholders.html">Placeholders</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-popovers.html">Popovers</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-progress.html">Progress</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-scrollspy.html">Scrollspy</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-spinners.html">Spinners</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-toasts.html">Toasts</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="ui-tooltips.html">Tooltips</a>
+                             </li>
+                        </ul>
+                   </div>
+              </li> <!-- end Base UI Menu -->
+
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarExtendedUI" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarExtendedUI">
+                        <span class="nav-icon"><iconify-icon icon="solar:magic-stick-3-bold-duotone"></iconify-icon></span>
+                        <span class="nav-text"> Advanced UI </span>
+                   </a>
+                   <div class="collapse" id="sidebarExtendedUI">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="extended-ratings.html">Ratings</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="extended-sweetalert.html">Sweet Alert</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="extended-swiper-silder.html">Swiper Slider</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="extended-scrollbar.html">Scrollbar</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="extended-toastify.html">Toastify</a>
+                             </li>
+                        </ul>
+                   </div>
+              </li> <!-- end Extended UI Menu -->
+
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarCharts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCharts">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:pie-chart-2-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Charts </span>
+                   </a>
+                   <div class="collapse" id="sidebarCharts">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-area.html">Area</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-bar.html">Bar</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-bubble.html">Bubble</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-candlestick.html">Candlestick</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-column.html">Column</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-heatmap.html">Heatmap</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-line.html">Line</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-mixed.html">Mixed</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-timeline.html">Timeline</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-boxplot.html">Boxplot</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-treemap.html">Treemap</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-pie.html">Pie</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-radar.html">Radar</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-radialbar.html">RadialBar</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-scatter.html">Scatter</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="charts-apex-polar-area.html">Polar Area</a>
+                             </li>
+                        </ul>
+                   </div>
+              </li> <!-- end Chart library Menu -->
+
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarForms" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:ufo-2-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Forms </span>
+                   </a>
+                   <div class="collapse" id="sidebarForms">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-basic.html">Basic Elements</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-checkbox-radio.html">Checkbox &amp; Radio</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-choices.html">Choice Select</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-clipboard.html">Clipboard</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-flatepicker.html">Flatepicker</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-validation.html">Validation</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-wizard.html">Wizard</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-fileuploads.html">File Upload</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-editors.html">Editors</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-input-mask.html">Input Mask</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="forms-range-slider.html">Slider</a>
+                             </li>
+                        </ul>
+                   </div>
+              </li> <!-- end Form Menu -->
+
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarTables" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:bill-list-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Tables </span>
+                   </a>
+                   <div class="collapse" id="sidebarTables">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="tables-basic.html">Basic Tables</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="tables-gridjs.html">Grid Js</a>
+                             </li>
+                        </ul>
+                   </div>
+              </li> <!-- end Table Menu -->
+
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarIcons" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarIcons">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:radial-blur-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Icons </span>
+                   </a>
+                   <div class="collapse" id="sidebarIcons">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="icons-boxicons.html">Boxicons</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="icons-solar.html">Solar Icons</a>
+                             </li>
+                        </ul>
+                   </div>
+              </li> <!-- end Icons library Menu -->
+
+              <li class="nav-item">
+                   <a class="nav-link" href="maps-vector.html">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:map-point-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Vector Maps </span>
+                   </a>
+              </li> <!-- end Map Menu -->
+
+              <li class="menu-title">Style</li>
+
+              <li class="nav-item">
+                   <a class="nav-link" href="javascript:void(0);">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:volleyball-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text">Badge Menu</span>
+                        <span class="badge bg-primary badge-pill text-end">1</span>
+                   </a>
               </li>
-              <li class="menu-item">
-                <a href="pages-account-settings-security.html" class="menu-link">
-                  <div data-i18n="Security">Security</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="pages-account-settings-billing.html" class="menu-link">
-                  <div data-i18n="Billing & Plans">Billing & Plans</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="pages-account-settings-notifications.html" class="menu-link">
-                  <div data-i18n="Notifications">Notifications</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="pages-account-settings-connections.html" class="menu-link">
-                  <div data-i18n="Connections">Connections</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-item">
-            <a href="pages-faq.html" class="menu-link">
-              <div data-i18n="FAQ">FAQ</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="pages-pricing.html" class="menu-link">
-              <div data-i18n="Pricing">Pricing</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <div data-i18n="Misc">Misc</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="pages-misc-error.html" class="menu-link" target="_blank">
-                  <div data-i18n="Error">Error</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="pages-misc-under-maintenance.html" class="menu-link" target="_blank">
-                  <div data-i18n="Under Maintenance">Under Maintenance</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="pages-misc-comingsoon.html" class="menu-link" target="_blank">
-                  <div data-i18n="Coming Soon">Coming Soon</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="pages-misc-not-authorized.html" class="menu-link" target="_blank">
-                  <div data-i18n="Not Authorized">Not Authorized</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="pages-misc-server-error.html" class="menu-link" target="_blank">
-                  <div data-i18n="Server Error">Server Error</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </aside>
-  <!-- / Menu -->
+
+              <li class="nav-item">
+                   <a class="nav-link menu-arrow" href="#sidebarMultiLevelDemo" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMultiLevelDemo">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:share-circle-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Menu Item </span>
+                   </a>
+                   <div class="collapse" id="sidebarMultiLevelDemo">
+                        <ul class="nav sub-navbar-nav">
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link" href="javascript:void(0);">Menu Item 1</a>
+                             </li>
+                             <li class="sub-nav-item">
+                                  <a class="sub-nav-link  menu-arrow" href="#sidebarItemDemoSubItem" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarItemDemoSubItem">
+                                       <span> Menu Item 2 </span>
+                                  </a>
+                                  <div class="collapse" id="sidebarItemDemoSubItem">
+                                       <ul class="nav sub-navbar-nav">
+                                            <li class="sub-nav-item">
+                                                 <a class="sub-nav-link" href="javascript:void(0);">Menu Sub item</a>
+                                            </li>
+                                       </ul>
+                                  </div>
+                             </li>
+                        </ul>
+                   </div>
+              </li> <!-- end Demo Menu Item -->
+
+              <li class="nav-item">
+                   <a class="nav-link disabled" href="javascript:void(0);">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:confetti-minimalistic-bold-duotone"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Disable Item </span>
+                   </a>
+              </li> <!-- end Demo Menu Item -->
+         </ul>
+    </div>
+</div>
+<!-- ========== App Menu End ========== -->

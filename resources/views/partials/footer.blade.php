@@ -1,16 +1,12 @@
-<!-- Footer -->
-<footer class="content-footer footer bg-footer-theme">
-    <div class="container-xxl">
-      <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-        <div class="text-body mb-2 mb-md-0">
-          ©
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-           made with <span class="text-danger"><i class="tf-icons ri-heart-fill"></i></span> by <a href="/" target="_blank" class="footer-link">Portfolio Galih</a>
+ <!-- ========== Footer Start ========== -->
+ <footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <script>document.write(new Date().getFullYear())</script> &copy; Raydar. Crafted by <iconify-icon icon="solar:hearts-bold-duotone" class="fs-18 align-middle text-danger"></iconify-icon> <a
+                    href="" class="fw-bold footer-text" target="_blank">Techzaa</a>
+            </div>
         </div>
-
-      </div>
     </div>
 </footer>
-<!-- / Footer -->
+<!-- ========== Footer End ========== -->

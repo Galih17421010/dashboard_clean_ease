@@ -42,17 +42,10 @@
                 "resources/js/app.js",
 
                 //head
-                "resources/assets/fonts/remixicon.css",
-                "resources/assets/css/node-waves.css",
-                "resources/assets/css/perfect-scrollbar.css",
-                "resources/assets/css/typeahead.css",
+                "resources/assets/css/vendor.min.css",
+                "resources/assets/css/icon.min.css",
+                "resources/assets/css/app.min.css",
 
-                "resources/assets/css/core.css",
-                "resources/assets/css/theme-default.css",
-                "resources/assets/css/demo.css",
+                "resources/assets/js/config.min.js",
 
-                "resources/assets/js/helpers.js",
-                "resources/assets/js/template-customizer.js",
-                "resources/assets/js/config.js",
-                "resources/assets/js/jquery.min.js",
 ])
