@@ -65,7 +65,6 @@
 
      </div>
      <!-- END Wrapper -->
-
      @include('partials.javascript')
 
      @yield('script')
