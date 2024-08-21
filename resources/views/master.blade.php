@@ -8,7 +8,7 @@
     <title>@yield('title') - {{ config('app.name') }}</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    @vite(['resources/css/app.css'])
+    @vite(['resources/css/style.css'])
     @stack('styles')
 </head>
 
@@ -21,11 +21,9 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li>
-                @permission('dashboard.read')
                     <li class="nav-item d-none d-sm-inline-block">
                         <a href="#" class="nav-link">{{ __('Dashboard') }}</a>
                     </li>
-                @endpermission
             </ul>
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
@@ -60,9 +58,7 @@
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="javascript:void(0);" class="brand-link">
-                {{-- <span class="brand-image">
-                    {{ __('Foo') }}
-                </span> --}}
+
                 <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
             </a>
 
@@ -70,46 +66,36 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        @permission('dashboard.read')
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>{{ __('Dashboard') }}</p>
                                 </a>
                             </li>
-                        @endpermission
-                        @permission('roles.read')
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-shield-alt"></i>
                                     <p>{{ __('Roles') }}</p>
                                 </a>
                             </li>
-                        @endpermission
-                        @permission('permissions.read')
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-user-shield"></i>
                                     <p>{{ __('Permissions') }}</p>
                                 </a>
                             </li>
-                        @endpermission
-                        @permission('users.read')
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>{{ __('Users') }}</p>
                                 </a>
                             </li>
-                        @endpermission
-                        @permission('profile.read')
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{route('profile.edit')}}" class="nav-link">
                                     <i class="nav-icon fas fa-user"></i>
                                     <p>{{ __('My Profile') }}</p>
                                 </a>
                             </li>
-                        @endpermission
                         <li class="nav-item">
                             <a href="javascript:void(0);" id="logout-button" class="nav-link">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
